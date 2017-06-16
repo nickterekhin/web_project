@@ -1,7 +1,60 @@
+body{
+    font-size:2em;
+}
 h1 a{
     font-size: 16px;
     color:#fff;
     text-decoration: none;
     background-color:#008c18;
     padding:5px 10px
+}
+
+i.fa{
+    margin-right:5px;
+}
+i.no-margin{
+    margin:0;
+}
+
+label.error{
+    color: #e92c3a;
+}
+.form-control.error{
+    border-color: #e92c3a;
+}
+.form-control.error:focus{
+    border-color: #e92c3a;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(233, 14, 59, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(233,14,59,.6);
+}
+
+.simple-table {
+    border-collapse: collapse;
+    width:100%
+}
+.simple-table thead{
+    background-color: #f4f4f4;
+    border-bottom: 1px solid #d7d7d7;
+}
+.simple-table th{
+    padding:10px 5px;
+    color:#313131;
+    text-align: left;
+}
+.simple-table td{
+    padding:10px 5px;
+    border-bottom: 1px solid #efefef;
+}
+.simple-table tr:nth-child(2n){
+    background-color: #f7f7f7;
+}
+.simple-table td.action-button{
+    width:150px;
+}
+.copy{
+    color:#999;
+}
+.copy span{
+    font-size:14px;
 }

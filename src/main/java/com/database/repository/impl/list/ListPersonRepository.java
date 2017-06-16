@@ -57,4 +57,28 @@ public class ListPersonRepository implements IPersonRepository{
     public List<Person> getAll() {
         return personList;
     }
+
+    @Override
+    public Person getByName(String personName) {
+        for(Person p : personList)
+        {
+            if(p.getName().equals(personName))
+            {
+                return  p;
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public Person getByNameExcludeId(String personName, long id) {
+        for(Person p : personList)
+        {
+            if(p.getName().equals(personName) && p.getId()!=id)
+            {
+                return  p;
+            }
+        }
+        return null;
+    }
 }

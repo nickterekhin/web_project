@@ -15,32 +15,40 @@
     <jsp:attribute name="header">
         <div>
             <h1>Persons List
-            &nbsp;<a href="/persons?action=add" style="font-size: 16px; color:#fff;text-decoration: none;background-color:#008c18;padding:5px 10px">Add New</a>
+            &nbsp;<a href="/persons?action=add" class="btn btn-success">Add New</a>
             </h1>
         </div>
     </jsp:attribute>
     <jsp:attribute name="footer">
-        <div>Footer</div>
+
     </jsp:attribute>
     <jsp:body>
-        <table id="persons">
+
+        <table id="persons" class="table table-striped table-hover">
+            <thead>
             <tr>
-                <th>id</th>
-                <th>Name</th>
-                <th>Age</th>
-                <th>Action</th>
+                <th style="width:10%">id</th>
+                <th style="width:50%">Name</th>
+                <th style="width:25%">Age</th>
+                <th style="width:25%">Action</th>
             </tr>
+            </thead>
+            <tbody>
             <c:forEach items="${persons}" var="personVar">
                 <tr>
                     <td><c:out value="${personVar.id}"/></td>
                     <td><c:out value="${personVar.name}"/></td>
                     <td><c:out value="${personVar.age}"/></td>
                     <td>
-                        <a href="/persons?action=edit&id=${personVar.id}">Edit</a>
-                        <a href="/persons?action=delete&id=${personVar.id}">Delete</a>
+                        <a href="/persons?action=edit&id=${personVar.id}" class="btn btn-warning" title="Edit Person"><i class="fa fa-pencil-square no-margin"></i></a>
+                        <a href="/persons?action=delete&id=${personVar.id}" class="btn btn-danger" title="Delete Person"><i class="fa fa-trash no-margin"></i></a>
                     </td>
                 </tr>
             </c:forEach>
+            </tbody>
+            <tfoot>
+
+            </tfoot>
         </table>
     </jsp:body>
 </t:_layout>

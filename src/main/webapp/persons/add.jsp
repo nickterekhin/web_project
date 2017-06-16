@@ -16,21 +16,40 @@
     <jsp:attribute name="header">
         <div>
           <h1>Add New Person
-            &nbsp;<a href="/persons">Back to Persons List</a>
+            &nbsp;<a href="/persons" class="btn btn-warning">Back to Persons List</a>
           </h1>
         </div>
     </jsp:attribute>
     <jsp:attribute name="footer">
-        <div>Footer</div>
+
     </jsp:attribute>
   <jsp:body>
-    <form action="${pageContext.request.getContextPath()}/persons?action=${pageContext.request.getParameter("action")}" method="post">
+      <script type="text/javascript">
+          $(document).ready(function(){
+              $("#add-form").ntValidator({
+                  rules:{
+                      name:{required:true},
+                      age:{required:true,number:true}
+                  }
+              });
 
-       <input type="text" name="name">
-      <br>
-      <input type="number" name="age">
-      <br>
-      <button type="submit" name="add-new" value="Add New">Add New</button>
-    </form>
+          });
+      </script>
+      <div class="row">
+          <div class="col-md-3">
+              <form id="add-form" action="${pageContext.request.getContextPath()}/persons?action=${pageContext.request.getParameter("action")}" method="post">
+                    <div class="form-group">
+                        <input type="text" name="name" class="form-control" value="${pageContext.request.getParameter("name")}">
+                    </div>
+
+                  <div class="form-group">
+                      <input type="text" name="age" class="form-control" value="${pageContext.request.getParameter("age")}">
+                  </div>
+
+                  <button type="submit" name="add-new" value="Add New" class="btn btn-success"><i class="fa fa-plus"></i>Add New</button>
+              </form>
+          </div>
+      </div>
+
   </jsp:body>
 </t:_layout>

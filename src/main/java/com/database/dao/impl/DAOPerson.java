@@ -41,4 +41,15 @@ public class DAOPerson extends DAOService implements IDAOPerson{
     public List<Person> getAll() {
         return this.daoRepository.getPersonRepository().getAll();
     }
+
+    @Override
+    public Person getByName(String personName) {
+        return this.daoRepository.getPersonRepository().getByName(personName);
+    }
+
+    @Override
+    public Person getByName(String personName, long excludeId) {
+        return this.daoRepository.getPersonRepository().getByNameExcludeId(personName,excludeId);
+    }
+
 }
